@@ -1,0 +1,16 @@
+
+
+Nós utilizamos o editor PyCharm para inspecionar os métodos da classe str. Mas também podemos verificar se uma classe possui um determinado método de outra forma: utilizando o método dir(objeto).
+
+O método dir(objeto) é um método embutido (built-in) que retorna uma lista de strings com todos os métodos e atributos do objeto passado.
+
+Por exemplo, se fizermos dir(str) temos o seguinte retorno (simplifiquei devido a grande quantidade de métodos e atributos da classe str):
+
+dir(str)
+[..., ‘__len__’, ... , ‘strip’, … ‘]
+
+Inclusive, se você souber o nome do método que está procurando, pode verificar se ele está nessa lista utilizando o operador in:
+
+‘__len__’ in dir(str)  # Verifica se o método __len__ existe na classe str
+True
+
