@@ -56,7 +56,7 @@ extrator_url = ExtratorURL(url)
 extrator_url_2 = ExtratorURL(url); print(extrator_url == extrator_url_2); print(id(extrator_url)); print(id(extrator_url_2))#adicionado no módulo 5 
 #dois objetos podem ser iguais mas possuem identidades diferentes, logo, ainda que sobrescreva o eq dos objetos a id não é mesma, eles só são iguais por terem os mesmos atributos
 
-extrator_url is extrator_url
+#extrator_url is extrator_url funciona para saber se é do mesmo endereço de memória
 
 print(extrator_url)
 print('O tamanho da url: ', len(extrator_url))
