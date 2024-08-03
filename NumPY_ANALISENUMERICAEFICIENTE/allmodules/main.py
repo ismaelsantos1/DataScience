@@ -201,3 +201,4 @@ print(dados.shape)
 
 #função savetxt -> salva um array em arquivo .txt
 np.savetxt('dados.csv', dados, delimiter= ',')
+
