@@ -29,8 +29,14 @@ peso_toranja = dado[5000:,1]
 #criando arrays para guardar diâmetro e peso de cada um
 array_laranja = np.array([diametro_laranja, peso_laranja]).T#linha para coluna
 array_toranja = np.array([diametro_toranja, peso_toranja]).T#linha para coluna
-print(array_laranja)
-print(array_toranja)
+#print(array_laranja)
+#print(array_toranja)
+
+visu = np.column_stack([array_laranja, array_toranja])
+print(visu)
+
+#salvando o array em arquivo .txt
+np.savetxt('exercicio.csv', visu, delimiter= ',')
 
 plt.plot(diametro_laranja, peso_laranja)
 plt.plot(diametro_toranja, peso_toranja)
