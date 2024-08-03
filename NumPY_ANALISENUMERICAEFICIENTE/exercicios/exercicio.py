@@ -32,6 +32,7 @@ array_toranja = np.array([diametro_toranja, peso_toranja]).T#linha para coluna
 #print(array_laranja)
 #print(array_toranja)
 
+#criando uma matriz com os dados das arrays de laranja e toranja
 visu = np.column_stack([array_laranja, array_toranja])
 print(visu)
 
