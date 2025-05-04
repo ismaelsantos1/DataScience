@@ -1,0 +1,1061 @@
+<!DOCTYPE html><html
+lang="pt-BR"><head><meta
+charset="UTF-8"><meta
+name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0"><title>Desvendando a Regressão Linear | Alura</title><meta
+name="description" content="Nesse artigo vamos compreender a regressão linear e demonstrar como ajustar a reta, interpretar e prever valores."><link
+rel="canonical" href="https://www.alura.com.br/artigos/desvendando-a-regressao-linear"><link
+rel="icon" href="/assets/favicon.1730889067.ico" /><link
+rel="preconnect" href="https://fonts.googleapis.com"><link
+rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Michroma&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link
+href="https://fonts.googleapis.com/css?family=Inter:wght@400;700&family=Michroma&display=swap" rel="stylesheet" type="text/css" />
+</noscript><link
+rel="stylesheet" href="/bundle,base/_reset,base/base,base/buttons,base/colors-apostilas,base/colors,base/titulos.1730889067.css"><link
+rel="stylesheet" href="/bundle,artigos/artigos,artigos/iframe.1730889067.css"><link
+rel="stylesheet" href="/bundle,cosmos/cosmos-article-list,cosmos/cosmos-content,cosmos/cosmos-header,cosmos/cosmos-media,cosmos/cosmos-related,cosmos/cosmos-webseries,cosmos/cosmos,cosmos/cosmosPodcast,cosmos/highlight.1730889069.css"><meta
+property="og:locale" content="pt_BR"><meta
+property="og:description" content="Nesse artigo vamos compreender a regressão linear e demonstrar como ajustar a reta, interpretar e prever valores."><meta
+property="og:title" content="Desvendando a Regressão Linear | Alura"><meta
+property="og:site_name" content="Alura"><meta
+property="og:url" content="https://www.alura.com.br/artigos/desvendando-a-regressao-linear"><meta
+property="og:image" content="https://www.alura.com.br/artigos/assets/desvendando-a-regressao-linear/imagem1.png"><meta
+property="og:image:alt" content="Alura logo"><meta
+property="fb:app_id" content="140078819399376"><meta
+property="og:type" content="website"><meta
+name="twitter:card" content="summary_large_image"><meta
+name="theme-color" content="#031626"><meta
+name="google-site-verification" content="e-ieHUO1JHyNyCZv0Z8Nu-R3ECPykHiNHHEhPdF35Bk" /><meta
+name="thumbnail" content="https://www.alura.com.br/artigos/assets/desvendando-a-regressao-linear/imagem1.png"> <script type="text/javascript" src="/86AAF7CD-A199-463A-BEEF-AEE7400B3F0D/main.js?attr=5Q6k69u-N6g9OHjQ3XVNkYmCHncfYEYy-y2rhk5XXrlFLwznpVSQt53ks64v1o4DlBdsxXOELQ4TjsKBixsCrd1yeLBJdPbIO7GKLZ6Gby83JHeznD5xdPZbu22SZB25" charset="UTF-8"></script><script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=faFlPxx7to49eoVZa3jTEfN94toZihHp5yoWjASZ0EG2Wb76BZflo_VBl-nGHWCgjrCklyEbMlw8fH9529M15DLlWZafG_lNA4mVO0zP6PVqshto6YTW7N_u0D4FJmAn" charset="UTF-8"></script><script>(function(w, d, s, l, i) {
+                    w[l] = w[l] || [];
+                    w[l].push({
+                        'gtm.start': new Date().getTime(),
+                        event: 'gtm.js'
+                    });
+                    var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s),
+                        dl = l != 'dataLayer' ? '&l=' + l : '';
+                    j.async = true;
+                    j.src = 'https://stape.alura.com.br/qukryqvi.js?st=' + i + dl + '';
+                    f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayerAlura', 'NTLWWLR');</script> </head><body
+class=""> <script async src="/assets/js/avatarOnError.1730889068.js"></script> <noscript><iframe
+src="https://www.googletagmanager.com/ns.html?id=NTLWWLR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <script type="application/ld+json">{
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://www.alura.com.br",
+          "name": "Alura"
+        }
+      }   
+              ,{
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://www.alura.com.br/artigos",
+            "name": "Artigos"
+          }
+        }
+              ,{
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "https://www.alura.com.br/artigos/data-science",
+            "name": "Data Science"
+          }
+        }
+              ,{
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@id": "https://www.alura.com.br/artigos/desvendando-a-regressao-linear",
+            "name": "Desvendando a Regressão Linear"
+          }
+        }
+            ]
+    }</script> <link
+rel="stylesheet" href="/assets/css/block/header.1731341439.css"><link
+rel="stylesheet" href="/assets/css/block/temporary/header.1731522160.css"><header
+class="header internalPage "><div
+class="header__principal"><nav
+class="container header__nav"><div
+class="header__nav--menu-cta">
+<img
+class="--to-open" src="/assets/img/header/icon-menu-open.1730889067.svg" alt="Botão para abrir o Menu">
+<img
+class="--to-close" src="/assets/img/header/icon-menu-close.1730889067.svg" alt="Botão para fechar o Menu"></div><a
+href="/" class="header__nav--logo">
+<img
+alt="Logo da empresa Alura" src="/assets/img/home/alura-logo.1730889067.svg">
+</a><div
+class="header__nav--busca header-barraBusca"><form
+action="/busca" class="header__nav--busca-form">
+<input
+type="search" class="header__nav--busca-input" id="header-barraBusca-form-campoBusca" name="query" placeholder="O que você quer aprender?" required>
+<button
+class="header__nav--busca-submit" type="submit">
+<svg
+xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15">
+<g
+fill="none" fill-rule="evenodd" stroke="#D7F9FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" transform="translate(1 1)">
+<path
+d="M13.637 12.86l-3.526-3.527" />
+<circle
+cx="5.667" cy="5.667" r="5.667" />
+</g>
+</svg>
+</button></form></div><div
+class="header__nav--ctas">
+<a
+class="header__nav--ctas-entrar header__nav--link-hover" href="https://cursos.alura.com.br/loginForm">Entrar</a>
+<a
+class="header__nav--ctas-matricule" href="/planos-cursos-online">Ver planos</a></div><div
+class="header__nav--menu">
+<a
+href="/como-funciona" class="header__nav--menu-link header__nav--link-hover">
+<span>Como</span>
+<span>Funciona</span>
+</a>
+<a
+href="/empresas" class="header__nav--menu-link header__nav--link-hover">
+<span>Para</span>
+<span>Empresas</span>
+</a></div></nav></div><div
+class="header__nav--courses"><div
+class="container"><ul
+class="header__nav--courses-list"><li
+class="header__nav--courses-item --programacao">
+<a
+href="/cursos-online-programacao" class="header__nav--courses-item-link">
+Programação                                    <span
+style="color: #00c86f;">_</span>
+</a></li><li
+class="header__nav--courses-item --front-end">
+<a
+href="/cursos-online-front-end" class="header__nav--courses-item-link">
+Front-end                                    <span
+style="color: #6bd1ff;">_</span>
+</a></li><li
+class="header__nav--courses-item --data-science">
+<a
+href="/cursos-online-data-science" class="header__nav--courses-item-link">
+Data Science                                    <span
+style="color: #9cd33b;">_</span>
+</a></li><li
+class="header__nav--courses-item --inteligencia-artificial">
+<a
+href="/cursos-online-inteligencia-artificial" class="header__nav--courses-item-link">
+Inteligência Artificial                                    <span
+style="color: #7b71ff;">_</span>
+</a></li><li
+class="header__nav--courses-item --devops">
+<a
+href="/cursos-online-devops" class="header__nav--courses-item-link">
+DevOps                                    <span
+style="color: #f16165;">_</span>
+</a></li><li
+class="header__nav--courses-item --design-ux">
+<a
+href="/cursos-online-design-ux" class="header__nav--courses-item-link">
+UX & Design                                    <span
+style="color: #dc6ebe;">_</span>
+</a></li><li
+class="header__nav--courses-item --mobile">
+<a
+href="/cursos-online-mobile" class="header__nav--courses-item-link">
+Mobile                                    <span
+style="color: #ffba05;">_</span>
+</a></li><li
+class="header__nav--courses-item --inovacao-gestao">
+<a
+href="/cursos-online-inovacao-gestao" class="header__nav--courses-item-link">
+Inovação & Gestão                                    <span
+style="color: #ff8c2a;">_</span>
+</a></li></ul></div></div></header><section
+class="cosmos-container-color"><div
+class="cosmos-color"><div
+class="cosmos artigos-topo"><div
+class="container">
+<a
+href="/artigos" class="artigos-topo__label">
+Artigos
+</a>
+&gt;
+<a
+class="artigos-topo__label --artigos-strong" href="/artigos/data-science" style="color:#9cd33b">Data Science</a></div></div></div> <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.alura.com.br/artigos/desvendando-a-regressao-linear"
+  },
+  "headline": "Desvendando a Regressão Linear",
+  "description": "Nesse artigo vamos compreender a regressão linear e demonstrar como ajustar a reta, interpretar e prever valores.",
+  "image": "https://www.alura.com.br/artigos/assets/desvendando-a-regressao-linear/imagem1.png",
+  "datePublished": "2022-02-07",
+      "author": {
+        "@type": "Organization",
+    "name": "Alura",
+    "url": "https://www.alura.com.br",
+    "logo": {
+      "@type": "ImageObject",
+    "url": "https://www.alura.com.br/assets/api/share/alura.jpg",
+      "height" : 60, 
+      "width" : 600,
+      "sameAs":["https://www.youtube.com/alura",
+               "https://www.facebook.com/AluraCursosOnline/",
+               "https://twitter.com/aluraonline",
+               "https://www.instagram.com/aluraonline/",
+               "https://play.google.com/store/apps/details?id=br.com.alura.mobi&hl=pt_BR&gl=US",
+               "https://apps.apple.com/br/app/alura-cursos-online/id1225776635"],
+      "contactPoint":{
+      "@type":"ContactPoint",
+     "email":"contato@alura.com.br",
+     "contactType":"customer support"
+     }},
+   "publisher": {
+    "@type": "Organization",
+    "name": "Alura",
+    "url": "https://www.alura.com.br",
+       "reviewedBy": {
+     "@type": "Person",
+     "name": "Ana Duarte",
+     "image": "https://cdn2.gnarususercontent.com.br/1/925307/663d4287-f50a-4f5d-92f3-df6e763cc094.png?width=200&height=200&aspect_ratio=1:1"
+   }
+     }}}</script> <section
+class="cosmos-color"><article
+class="cosmos"
+data-ga4-article-name="Desvendando a Regressão Linear"
+data-ga4-article-category="Data Science"
+data-ga4-article-author="Ana Duarte"
+><div
+class="cosmos-header"><h1>Desvendando a Regressão Linear</h1><div
+class="cosmos-image__wrapper">
+<img
+src="assets/desvendando-a-regressao-linear/desvendando-a-regressao-linear.jpg"
+alt="Desvendando a Regressão Linear"
+class="cosmos-image cosmos-banner-top"
+style="border: none; padding: 0px; width: 100%; height: 300px; object-fit: cover; max-width: none;"></div><div
+class="cosmos-header-info"><div
+class="cosmos-author">
+<img
+loading="lazy" class="cosmos-author-img" src="https://cdn2.gnarususercontent.com.br/1/925307/663d4287-f50a-4f5d-92f3-df6e763cc094.png?width=200&height=200&aspect_ratio=1:1" alt="Ana Duarte" width="50" height="50"><div><div
+class="cosmos-author-name">Ana Duarte</div>
+<time
+class="cosmos-author-date"
+datetime="2022-02-07 19:31">
+07/02/2022                                    </time></div></div><div
+class="cosmos-container-social-media"><p
+class="cosmos-text-social-media">Compartilhe</p><ul
+class="cosmos-container-flex-social-media"><li
+class="--icon-twitter">
+<a
+href="https://twitter.com/share?url=https://www.alura.com.br/artigos/desvendando-a-regressao-linear"></a></li><li
+class="--icon-linkedin">
+<a
+href="https://linkedin.com/shareArticle?url=https://www.alura.com.br/artigos/desvendando-a-regressao-linear"></a></li><li
+class="--icon-facebook">
+<a
+href="https://facebook.com/share.php?u=https://www.alura.com.br/artigos/desvendando-a-regressao-linear"></a></li><li
+class="--icon-whatsapp">
+<a
+href="https://api.whatsapp.com/send?text=https://www.alura.com.br/artigos/desvendando-a-regressao-linear"></a></li></ul></div><div
+class="cosmos-related-gruides"><div
+class="cosmos-related-item cosmos-related-item__formacao">
+<a
+class="cosmos-related-link-formacao" href="/formacao-data-science"><div
+class="cosmos-flex--text">
+<img
+loading="lazy" class="cosmos-related-item-image" src="https://www.alura.com.br/assets/api/formacoes/categorias/data-science.svg"><div
+class="cosmos--margin"><p
+class="cosmos-text-category">Esse artigo faz parte da</p><p
+class="cosmos-related-item-title">Formação Data Science</p></div></div>
+</a></div></div></div></div><div
+class="cosmos-header-line"></div><main
+class="article__main-content "><aside
+class="article__aside-content"><link
+rel="stylesheet" href="/assets/css/block/tableOfContents.1730889067.css"><div
+class="table-of-contents">
+<span>Confira neste artigo:</span><nav><ol><li>
+<a
+href="#ajustando-a-reta">
+Ajustando a reta                </a></li><li>
+<a
+href="#interpretando-os-valores">
+Interpretando os valores                </a></li><li>
+<a
+href="#prevendo-valores">
+Prevendo valores                </a></li></ol></nav></div></aside><div
+class="cosmos-color cosmos"><p>Não importa se você é uma pessoa novata ou mais experiente no <a
+href="https://www.alura.com.br/cursos-online-data-science/data-science">mundo dos dados</a>, mas é bem provável que já tenha ouvido falar da famosa <strong>regressão linear</strong> ou tenha ajustado uma reta para visualizar a relação entre dois fenômenos. Mas, cá entre nós, como esse algoritmo funciona? Ou ainda, o que acontece por trás da previsão de dados quando utilizamos essa técnica?</p><p>A <strong>regressão linear simples</strong> é uma metodologia que estuda a relação entre dois fenômenos, permitindo entender o efeito e a causalidade entre eles, além de prever novos valores. Para compreender melhor, vamos desvendar como ajustar a reta, interpretar e prever valores.</p><h2 id="ajustando-a-reta">Ajustando a reta</h2><p>A relação entre dois fatores é estudada pela regressão linear simples através de uma fórmula que desenha uma reta. Para entender melhor essa relação usaremos um dos <a
+href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_de_consumo#:~:text=A%20fun%C3%A7%C3%A3o%20de%20consumo%20keynesiana,e%20ignora%20rendimento%20futuro%20potencial" target="_blank" rel="noopener">estudos</a> do economista John Keynes. Ele concluiu que <strong>os indivíduos tendem a aumentar o seu consumo conforme sua renda aumenta</strong>. Essa é uma versão simplificada da <strong>função de consumo</strong> também estudada no curso de <a
+href="https://www.alura.com.br/curso-online-estatistica-r-correlacao-regressao">Estatística com R: Correlação e regressão</a>.</p><p>Na tabela abaixo, podemos visualizar as cinco primeiras observações do conjunto de dados que utilizaremos:</p>
+<img
+src="assets/desvendando-a-regressao-linear/imagem1.png" alt="Tabela com os cinco primeiros valores de gastos e de renda. A tabela contém duas colunas: Gasto e Renda. Na coluna Gasto temos cinco valores: 3011, 1305, 1879, 2654, 2849, sendo um em cada linha. Na coluna Renda temos cinco valores: 9714, 3728, 6062, 8845, 8378, sendo um em cada linha." loading="lazy" class="cosmos-image" /><p>Podemos criar uma relação entre <strong>gasto</strong> e <strong>renda</strong> da seguinte forma:</p>
+<img
+src="assets/desvendando-a-regressao-linear/imagem2.png" alt="Fórmula de regressão. Da esquerda para a direita temos: gasto igual a beta zero mais beta um multiplicado pela renda." loading="lazy" class="cosmos-image" /><p>Aqui, cada componente representa um conjunto de valores, sendo:</p><ul><li><strong>Gasto</strong>: gasto ou consumo das famílias</li><li><strong>Renda</strong>: renda disponível</li><li><strong>𝜷0</strong>: consumo quando o rendimento é zero</li><li><strong>𝜷1</strong>: propensão marginal a consumir</li></ul><p>Usando o conjunto de dados como exemplo, essa função desenha a seguinte reta <code>Gasto =  207.9 + 0.3Renda + erro</code>:</p>
+<img
+src="assets/desvendando-a-regressao-linear/imagem3.png" alt="Gráfico da reta de regressão do gasto pela renda. Temos a Renda das Famílias no eixo horizontal com valores em um intervalo de 2500 e o Gasto da Famílias no eixo vertical com valores em um intervalo de 1000. No gráfico temos uma reta crescente e vários pontos próximos à ela, tanto acima quanto abaixo da reta." loading="lazy" class="cosmos-image" /><p>Podemos perceber que quanto menor a renda (X) menor é o gasto das famílias (Y). Ao centro, há uma nuvem de pontos na qual foi ajustada uma reta linear crescente que nos permite entender o comportamento médio dos gastos familiares. Mas, como passamos da função <code>Gasto = 𝜷0+ 𝜷1Renda + erro</code> para <code>Gasto =  207.9 + 0.3Renda + erro</code>?</p><p>Independente do seu conjunto de dados, será ajustada uma reta que genericamente podemos representar pela função abaixo:</p>
+<img
+src="assets/desvendando-a-regressao-linear/imagem4.png" alt="Fórmula genérica da regressão linear simples. Y é igual à beta zero mais beta um multiplicado por X mais e. Y poder ser chamado de variável reposta, beta zero é o intercepto, beta um é o coeficiente angular , X é a variável explicativa, “e” é o erro." loading="lazy" class="cosmos-image" /><p><strong>Y</strong> é o conjunto de valores que depende de uma explicação e <strong>X</strong> é a variável independente e explicativa. No nosso exemplo, o gasto da família depende da sua renda. O <strong>𝜷0</strong> também chamado de <em>intercepto</em> é o valor de Y quando o 𝑋i  é zero. Já o <strong>𝜷1</strong>, o <em>coeficiente angular</em>, nos informa a taxa de variação e o quão inclinada nossa reta será apresentada.</p>
+<img
+src="assets/desvendando-a-regressao-linear/imagem5.png" alt="Gráfico com eixo horizontal X e o eixo vertical Y. Nele temos uma reta crescente saindo de um ponto do eixo Y. No corpo do gráfico há alguns elementos explicativos: Beta zero é mostrado como a distância entre o eixo x e a posição em que a reta corta o eixo y, beta um é o ângulo entre a reta do gráfico e uma reta paralela ao eixo x. Por fim, temos a fórmula da reta: Y i é igual a beta zero mais beta um multiplicado por x i. Esta fórmula está em um retângulo e dele parte uma seta em direção à reta." loading="lazy" class="cosmos-image" /><p>Ambos os parâmetros, 𝜷0 e 𝜷1, são desconhecidos e precisam ser estimados. Aqui não iremos nos estender nesse assunto, mas saiba que um dos processos mais utilizados para estimação desses coeficientes é o <strong>método dos mínimos quadrados</strong>. Em resumo, esse método cria uma reta mais próxima possível dos valores disponíveis a qual a diferença entre o valor real de <strong>Y</strong> e o valor esperado é mínimo.</p><p>A partir dos nossos dados e desse processo de estimação, podemos calcular os betas com as seguintes fórmulas:</p>
+<img
+src="assets/desvendando-a-regressao-linear/imagem6.png" alt="Fórmula do beta um. Da esquerda para direita temos: beta um é igual a razão entre duas equações. No numerador temos o tamanho da amostra (n), multiplicado pelo somatório do produto entre X i e Y i menos a multiplicação entre o somatório de X i e Y i. No denominador temos o tamanho da amostra (n) multiplicado pelo somatório de X i ao quadrado menos o quadrado do somatório de X i." loading="lazy" class="cosmos-image" /><hr
+/>
+<img
+src="assets/desvendando-a-regressao-linear/imagem7.png" alt="Fórmula do beta zero. Da esquerda para a direita temos: beta zero é igual à média amostral de Y menos o beta um estimado multiplicado pela média amostral de X." loading="lazy" class="cosmos-image" /><hr
+/>
+<img
+src="assets/desvendando-a-regressao-linear/imagem8.png" alt="Fórmula de beta um com os valores dos conjuntos de dados. Da esquerda para direita temos, beta um é igual a razão entre as equações: 50 vezes por 716.683.794 menos 303275 multiplicado por 100556 dividido por 50 vezes 2.198.628.939 menos o quadrado de 303275. Resolvendo as equações do numerador e denominador, temos: 5338068800 dividido por 17955721325. Seu valor total é 0,297." loading="lazy" class="cosmos-image" /><hr
+/>
+<img
+src="assets/desvendando-a-regressao-linear/imagem9.png" alt="Fórmula do beta zero. Da esquerda para a direita temos: beta zero igual a 2011.12 menos 0,297 multiplicado por 6065.5 igual a 207,9." loading="lazy" class="cosmos-image" /><p>Formando:</p><pre><code class="hljs">Gasto =  207.9 + 0.3Renda + erro</code></pre><p>Você deve ter percebido que nem todos os pontos estão alinhados na reta que ajustamos. Para isso, precisamos adicionar o erro na nossa fórmula, <strong>e</strong>, que é justamente a diferença entre o <strong>valor observado e o </strong>valor fornecido** pela equação.</p>
+<img
+src="assets/desvendando-a-regressao-linear/imagem10.png" alt="Gráfico com eixo horizontal X e o eixo vertical Y. No gráfico temos uma reta crescente e cinco pontos próximos à ela e identificados respectivamente como e1, e2, e3, e4, e5." loading="lazy" class="cosmos-image" /><p>Agora que você já conheceu melhor todos os integrantes da regressão linear, é importante saber que a variável resposta (aquela que estamos tentando explicar e que depende de outros fatores), deve ser <strong>quantitativa</strong>, ou seja, deve apresentar valores numéricos.</p><p>No nosso caso, a variável resposta é o gasto familiar. Outros exemplos de variáveis são:</p>
+<img
+src="assets/desvendando-a-regressao-linear/imagem11.png" alt="Tabela com 3 colunas mostrando exemplos de possíveis variáveis, o seu tipo e se é ou não apropriada para ser candidata à variável resposta de uma regressão linear, respectivamente. A variável gasto do mês aparece com valores de exemplo: 487 reais e 876 reais, é do tipo quantitativa e é apropriada à regressão linear. A segunda variável, Evasão, mostra como valor “evadiu” e “não evadiu”, é do tipo qualitativa nominal e não é apropriada para ser variável resposta de uma regressão linear. A terceira variável, Grau de escolaridade, mostra os níveis educacionais por números como: 1 para ensino fundamental,  2 para ensino médio, 3 para ensino superior e 4 para pós-graduação, é classificada em qualitativa ordinal e não é apropriada para ser resposta da regressão linear." loading="lazy" class="cosmos-image" /><p>Se o que você procura estudar não estiver disposto em valores numéricos, capazes de tirar média e outras métricas, a regressão linear não é o método mais apropriado. Nesse caso, você poderá usar outras metodologias, como a regressão logística ou métodos de classificação.</p><a
+href="https://www.alura.com.br/imersao-dev-back-end-google-gemini?utm_source=blog&utm_medium=banner&utm_campaign=imersao-dev-back-end-google"
+data-ga4-banner-name="imersao-dev-back-end-gemini"
+class="cosmos-banner-image"
+>
+<picture>
+<source
+media="(min-width: 768px)" srcset="assets/imersao-dev-back-end/imersao-dev-back-end-gemini-banner-corpo-desktop.png" />
+<img
+class="cosmos-image" src="assets/imersao-dev-back-end/imersao-dev-back-end-gemini-banner-corpo-mobile.png" alt="Imersão dev Back-end: mergulhe em programação hoje, com a Alura e o Google Gemini. Domine o desenvolvimento back-end e crie o seu primeiro projeto com Node.js na prática. O evento é 100% gratuito e com certificado de participação. O período de inscrição vai de 18 de novembro de 2024 a 22 de novembro de 2024. Inscreva-se já!" loading="lazy" />
+</picture>
+</a><h2 id="interpretando-os-valores">Interpretando os valores</h2><p>Você já ajustou a reta e também conhece cada um dos integrantes da nossa função. Vamos voltar ao exemplo e entender o que cada valor significa na prática?</p><p>Passamos de</p><pre><code class="hljs">Gasto = 𝜷0 + 𝜷1Renda + e</code></pre><p>para</p><pre><code class="hljs">Gasto =  207.9 + 0.3Renda + e</code></pre><p>No nosso caso, 𝜷0  é 207,9, ou seja, o consumo (quando não há renda) é de 207,90 reais. Já o coeficiente relacionado à renda (𝜷1) indica que, a cada um real a mais na renda, o gasto médio esperado aumenta, em média, 0,30 reais. Dessa forma, quantifica-se o efeito da  renda sobre o gasto.</p><h2 id="prevendo-valores">Prevendo valores</h2><p>Imagine que uma família possui renda de 3 mil reais, quanto seria o gasto estimado segundo nosso modelo? Podemos substituir 3.000 na fórmula e obter um gasto esperado estimado de <code>Gasto =  207,9 + 0,3*(3000)  = 1107,9</code>.</p>
+<img
+src="assets/desvendando-a-regressao-linear/imagem12.png" alt="Gráfico da reta de regressão do gasto pela renda. Temos a Renda das Famílias no eixo horizontal com valores em um intervalo de 2500 e o Gasto das Famílias no eixo vertical com valores em um intervalo de 1000. No gráfico temos uma reta crescente e vários pontos próximos à ela, tanto acima quanto abaixo da reta. Temos também um ponto na cor rosa em cima da reta referente ao valor de três mil reais da renda familiar." loading="lazy" class="cosmos-image" /><p>O ponto rosa no gráfico mostra nosso valor predito baseado na renda de três mil reais de renda familiar. Tenha em mente que a reta de regressão é capaz de quantificar a relação entre as variáveis explicativas e resposta e de prever um novo valor.</p><p>Há outros detalhes da teoria, mas, de forma geral, a regressão linear é uma metodologia que estuda a relação entre dois fenômenos. Por meio de uma fórmula, é possível compreender o efeito que a variável explicativa tem sobre a variável resposta, além de fazer previsões de novos valores.</p><p>Você pode aprofundar os conhecimentos com o curso <a
+href="https://www.alura.com.br/curso-online-estatistica-r-correlacao-regressao">Estatística com R: Correlação e regressão</a> aqui na Alura. Além disso, pode usar outros conjuntos de dados como demonstrado no artigo <a
+href="https://www.alura.com.br/artigos/aplicando-a-regressao-linear-com-r">Aplicando a regressão linear com R</a>.</p></div><aside
+class="article__aside-banner">
+<a
+class="cosmos-banner-image"
+href="https://www.alura.com.br/imersao-dev-back-end-google-gemini?utm_source=blog&utm_medium=banner&utm_campaign=imersao-dev-back-end-google"
+data-ga4-banner-name="imersao-dev-back-end-gemini"
+>
+<picture>
+<source
+media="(min-width: 768px)"
+srcset="assets/imersao-dev-back-end/imersao-dev-back-end-gemini-banner-lateral-desktop.png"
+/>
+<img
+class="cosmos-image"
+src="assets/imersao-dev-back-end/imersao-dev-back-end-gemini-banner-lateral-mobile.png"
+alt="Imersão dev Back-end: mergulhe em programação hoje, com a Alura e o Google Gemini. Domine o desenvolvimento back-end e crie o seu primeiro projeto com Node.js na prática. O evento é 100% gratuito e com certificado de participação. O período de inscrição vai de 18 de novembro de 2024 a 22 de novembro de 2024. Inscreva-se já!"
+loading="lazy"
+/>
+</picture>
+</a></aside></main><div
+class="cosmos-author-sobre">
+<img
+loading="lazy" class="cosmos-author-img" src="https://cdn2.gnarususercontent.com.br/1/925307/663d4287-f50a-4f5d-92f3-df6e763cc094.png?width=200&height=200&aspect_ratio=1:1" alt="Ana Duarte" width="150" height="150"><div
+class="cosmos-author-txt"><div
+class="cosmos-author-name">Ana Duarte</div><p>Sou bacharela em Estatística e atualmente curso Ciência da Computação. Já atuei como cientista de dados no ramo educacional e financeiro e hoje sou instrutora na Escola de Dados da Alura e voluntária na equipe de projetos do grupo Data Girls.  Sou apaixonada por transformar dados em informação inteligente usando a ciência de dados em diversos tipos de aplicação. Fora isso,  sempre estou acompanhando alguma série e procurando novas rotas para andar de bike.</p></div></div><nav
+class="cosmos__navigation">
+<a
+href="publicando-na-web-com-power-bi" class="cosmos__navigation-link --previous"><div
+class="cosmos__navigation-item"><div
+class="cosmos__navigation-label">
+<span
+class="cosmos__navigation-decoration"></span>
+<span
+class="cosmos__navigation-description">Artigo Anterior</span></div>
+<strong> Power BI: publicando na web com uma conta de desenvolvedor </strong></div>
+</a>
+<a
+href="iniciando-projeto-spark-no-colab" class="cosmos__navigation-link --next"><div
+class="cosmos__navigation-item"><div
+class="cosmos__navigation-label">
+<span
+class="cosmos__navigation-decoration"></span>
+<span
+class="cosmos__navigation-description">Próximo Artigo</span></div>
+<strong
+class="cosmos__navigation-item-title" > Iniciando um projeto Spark no Google Colab </strong></div>
+</a></nav></article></section><div
+class="cosmos-other-files"><div
+class="container --container-banner-flex"><div
+class="categories-artigos" style="background:#9cd33b;">
+<svg
+class="categories-artigos-icon" style="fill:#ffffff" xmlns:xlink="http://www.w3.org/1999/xlink">
+<use
+xlink:href="/svg,1730889067/categorias#icon-categorias-data-science" />
+</svg></div><p
+class="cosmos-other-files-text">Veja outros artigos sobre <a
+href="/artigos/data-science" style="color:#9cd33b">Data Science</a></p></div></div><div
+class="cosmos-color"><div
+class="cosmos --newsletter-spacing"><link
+rel="stylesheet" href="/assets/css/block/subscribeNewsletterCard.1730889067.css"><div
+class="subscribeNewsletterCard-container"><section
+class="subscribeNewsletterCard-wrapper"><div
+class="subscribeNewsletterCard-decoration"></div><div
+class="subscribeNewsletterCard-busca-box container"><div
+class="subscribeNewsletterCard-box-texto"><p
+class="subscribeNewsletterCard-texto-bold">Quer mergulhar em tecnologia e aprendizagem?</p><p
+class="subscribeNewsletterCard-texto-normal">Receba conteúdos, dicas, notícias, inovações e tendências sobre o mercado tech diretamente na sua caixa de entrada.</p></div><div
+class="subscribeNewsletterCard__hubspot"><div
+id="39a8f8bd-d48f-4f45-8ed4-d26366176d39" class="hubspot-form"> <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script> <script>hbspt.forms.create({
+        region: 'na1',
+        portalId: '21748317',
+        formId: '39a8f8bd-d48f-4f45-8ed4-d26366176d39',
+        onFormSubmitted: async function($form, data) {
+          let newWindow;
+          if (window.FORM_REDIRECT_URL !== undefined) {
+            window.location.href = window.FORM_REDIRECT_URL
+          }
+
+          // redirect do formulário whatsapp
+          
+          // dataLayer do GA4
+          let dataLayerAlura = window.dataLayerAlura || [];
+          
+          // script JS extra
+          
+          
+          // redirect geral
+                  }
+      });</script> </div></div></div></section></div></div></div></section><link
+rel="stylesheet" href="/assets/css/block/footer.1730889067.css"><footer
+class="footer"><div
+class="container"><div
+class="footer-info flex-row"><div
+class="footer-logos">
+<a
+class="footer-logos-home" gtm-data='footer_primeira_secao_050' href="/">
+<img
+src="/assets/img/home/alura-logo.1730889067.svg" alt="Alura" class="footer-logo" loading="lazy">
+</a><p
+class="footer-navegue-lista-link --description">
+<span
+class="footer-empresa-item">AOVS Sistemas de Informática S.A</span>
+<span
+class="footer-empresa-item">CNPJ 05.555.382/0001-33</span></p></div><div
+class="footer-card-hotLinks social-desktop"><h2 class="footer-card-hotLinks-titulo">Nossas redes e apps</h2><div
+class="footer-card-hotLinks-info footer-card-redes">
+<a
+href="https://www.youtube.com/alura" gtm-data='footer_primeira_secao_065' class="footer-card-hotLinks-link"
+target="_blank" rel="noopener" title="YouTube da Alura">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-youtube">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-youtube" />
+</svg>
+<span>YouTube</span>
+</a>
+<a
+href="https://www.facebook.com/AluraCursosOnline/" gtm-data='footer_primeira_secao_066'
+class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="Facebook da Alura">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-facebook">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-facebook" />
+</svg>
+<span>Facebook</span>
+</a>
+<a
+href="https://twitter.com/aluraonline" gtm-data='footer_primeira_secao_067' class="footer-card-hotLinks-link"
+target="_blank" rel="noopener" title="Twitter da Alura">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-twitter">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-twitter" />
+</svg>
+<span>Twitter</span>
+</a>
+<a
+href="https://instagram.com/aluraonline" class="footer-card-hotLinks-link" gtm-data='footer_primeira_secao_073'
+target="_blank" rel="noopener" title="Instagram da Alura">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-instagram">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-instagram" />
+</svg>
+<span>Instagram</span>
+</a>
+<a
+href="https://play.google.com/store/apps/details?id=br.com.alura.mobi&hl=pt_BR"
+gtm-data='footer_primeira_secao_069' class="footer-card-hotLinks-link" target="_blank" rel="noopener"
+title="Baixar na Google Play Store">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-mobile">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-googleplay" />
+</svg>
+<span>Google Play Store</span>
+</a>
+<a
+href="https://itunes.apple.com/br/app/alura-cursos-online/id1225776635" gtm-data='footer_primeira_secao_070'
+class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="Baixar na AppStore">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-mobile">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-appstore" />
+</svg>
+<span>AppStore</span>
+</a>
+<a
+href="https://www.tiktok.com/@aluraonline?lang=pt-BR" gtm-data='footer_primeira_secao_071' class="footer-card-hotLinks-link"
+target="_blank" rel="noopener" title="TikTok da Alura">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-youtube">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-tiktok" />
+</svg>
+<span>TikTok</span>
+</a></div></div><div
+class="footer-card-hotLinks social-mobile"><h2 class="footer-card-hotLinks-titulo">Nossas redes e apps</h2><div
+class="footer-card-hotLinks-info footer-card-redes">
+<a
+href="https://www.youtube.com/alura" gtm-data='footer_primeira_secao_065' class="footer-card-hotLinks-link"
+target="_blank" rel="noopener" title="YouTube da Alura">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-youtube">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-youtube" />
+</svg>
+<span>YouTube</span>
+</a>
+<a
+href="https://www.facebook.com/AluraCursosOnline/" gtm-data='footer_primeira_secao_066'
+class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="Facebook da Alura">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-facebook">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-facebook" />
+</svg>
+<span>Facebook</span>
+</a>
+<a
+href="https://twitter.com/aluraonline" gtm-data='footer_primeira_secao_067' class="footer-card-hotLinks-link"
+target="_blank" rel="noopener" title="Twitter da Alura">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-twitter">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-twitter" />
+</svg>
+<span>Twitter</span>
+</a>
+<a
+href="https://instagram.com/aluraonline" class="footer-card-hotLinks-link" gtm-data='footer_primeira_secao_073'
+target="_blank" rel="noopener" title="Instagram da Alura">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-instagram">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-instagram" />
+</svg>
+<span>Instagram</span>
+</a>
+<a
+href="https://play.google.com/store/apps/details?id=br.com.alura.mobi&hl=pt_BR"
+gtm-data='footer_primeira_secao_069' class="footer-card-hotLinks-link" target="_blank" rel="noopener"
+title="Baixar na Google Play Store">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-mobile">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-googleplay" />
+</svg>
+<span>Google Play Store</span>
+</a>
+<a
+href="https://itunes.apple.com/br/app/alura-cursos-online/id1225776635" gtm-data='footer_primeira_secao_070'
+class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="Baixar na AppStore">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-mobile">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-appstore" />
+</svg>
+<span>AppStore</span>
+</a>
+<a
+href="https://www.tiktok.com/@aluraonline?lang=pt-BR" gtm-data='footer_primeira_secao_071' class="footer-card-hotLinks-link"
+target="_blank" rel="noopener" title="TikTok da Alura">
+<svg
+class="footer-card-hotLinks-icon footer-card-hotLinks-youtube">
+<use
+xlink:href="/svg,1730889067/footer#icon-footer-tiktok" />
+</svg>
+<span>TikTok</span>
+</a></div></div></div><div
+class="footer-navegue"><div
+class="navegue-column"><h2 class="footer-navegacao-titulo">Institucional</h2><ul
+class="footer-navegue-lista"><li
+class="footer-navegue-lista-link"><a
+href="/sobre" gtm-data='footer_primeira_secao_063'>Sobre nós</a></li><li
+class="footer-navegue-lista-link"><a
+href="https://grupoalura.gupy.io">Carreiras Alura</a></li><li
+class="footer-navegue-lista-link"><a
+href="https://www.alura.com.br/empresas">Para
+Empresas</a></li><li
+class="footer-navegue-lista-link"><a
+href="https://startalura.com.br/">Para Sua Escola</a></li><li
+class="footer-navegue-lista-link"><a
+href="/politica-de-privacidade" gtm-data='footer_primeira_secao_061'>Política de Privacidade</a></li><li
+class="footer-navegue-lista-link"><a
+href="/compromisso-de-integridade">Compromisso de Integridade</a></li><li
+class="footer-navegue-lista-link"><a
+href="/termos-de-uso" gtm-data='footer_primeira_secao_062'>Termos
+de
+Uso</a></li><li
+class="footer-navegue-lista-link"><a
+href="https://drive.google.com/open?id=10jsnllQrEddusKyqp9A2Q6Wg_HpQpC49&usp=drive_fs" target="_blank">Documentos Institucionais</a></li><li
+class="footer-navegue-lista-link"><a
+href="https://status.alura.com.br/">Status</a></li></ul></div><div
+class="navegue-column"><h2 class="footer-navegacao-titulo">A Alura</h2><ul
+class="footer-navegue-lista"><li
+class="footer-navegue-lista-link"><a
+href="/formacoes" gtm-data='footer_primeira_secao_064'>Formações</a></li><li
+class="footer-navegue-lista-link"><a
+href="/como-funciona" gtm-data='footer_primeira_secao_064'>Como
+Funciona</a></li><li
+class="footer-navegue-lista-link"><a
+href="/cursos-online-tecnologia" gtm-data='footer_primeira_secao_054'>Todos os cursos</a></li><li
+class="footer-navegue-lista-link"><a
+href="/depoimentos" gtm-data="footer_primeira_secao_069">Depoimentos</a></li><li
+class="footer-navegue-lista-link"><a
+href="/instrutores" gtm-data="footer_primeira_secao_061">Instrutores(as)</a></li><li
+class="footer-navegue-lista-link"><a
+href="/dev-em-t" gtm-data='footer_primeira_secao_065'>Dev em
+&lt;T&gt;</a></li><li
+class="footer-navegue-lista-link"><a
+href="/luri-inteligencia-artificial" gtm-data='footer_primeira_secao_065'>Luri, a inteligência artificial da Alura</a></li><li
+class="footer-navegue-lista-link"><a
+href="https://www.iaconferencebrasil.com.br/" target="_blank">IA Conference 2024</a></li></ul></div><div
+class="navegue-column"><h2 class="footer-navegacao-titulo">Conteúdos</h2><ul
+class="footer-navegue-lista"><li
+class="footer-navegue-lista-link"><a
+href="/cases">Alura Cases</a></li><li
+class="footer-navegue-lista-link"><a
+href="/imersao" gtm-data="footer_primeira_secao_068">Imersões</a></li><li
+class="footer-navegue-lista-link"><a
+href="/artigos" gtm-data='footer_primeira_secao_058'>Artigos</a></li><li
+class="footer-navegue-lista-link"><a
+href="/podcasts">Podcasts</a></li><li
+class="footer-navegue-lista-link"><a
+href="/empresas/artigos">Artigos de educação <br> corporativa</a></li><li
+class="footer-navegue-lista-link">
+<a
+href="/imersao-dev-back-end-google-gemini">
+Imersão Dev Back-End                </a></li></ul></div><div
+class="navegue-column"><h2 class="footer-navegacao-titulo">Fale Conosco</h2><ul
+class="footer-navegue-lista"><li
+class="footer-navegue-lista-link"><a
+href="https://www.alura.com.br/contato">Email e telefone</a></li><li
+class="footer-navegue-lista-link"><a
+href="https://suporte.alura.com.br/" gtm-data='footer_primeira_secao_066'>Perguntas frequentes</a></li></ul></div><div
+class="footer-column footer-column-cards"><div
+class="newsletter"><h2 class="newsletter-titulo">Novidades e Lançamentos</h2><div
+class="hubspot-form newsletter-form"> <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js?pre=1"></script> <script>hbspt.forms.create({
+                  region: "na1",
+                  portalId: "21748317",
+                  formId: "39a8f8bd-d48f-4f45-8ed4-d26366176d39"
+                });</script> </div></div></div></div><div
+class="parceiros flex-column"><h2 class="footer-navegacao-titulo">Parceiros</h2><ul
+class="footer-navegue-lista flex-row"><li
+class="footer-navegue-lista-link --description footer-column-cards">
+<img
+src="/assets/img/footer/scale-up-endeavor.1730889067.png" alt="Programa de aceleração Scale-Up Endeavor" class="footer-navegue-lista__image" loading="lazy">
+<span
+class="footer-navegue-lista-link --description --partners">Nós, da Alura, somos uma das Scale-Ups
+selecionadas pela Endeavor, programa de aceleração das empresas que
+mais crescem no país.</span></li><li
+class="footer-navegue-lista-link --description footer-column-cards">
+<img
+src="/assets/img/footer/google-alumni-2021.1730889067.png" alt="Growth Academy 2021 do Google For Startups" class="footer-navegue-lista__image" loading="lazy">
+<span
+class="footer-navegue-lista-link --description --partners">Fomos uma das 7 startups selecionadas pelo
+Google For Startups a participar do programa Growth Academy em
+2021.</span></li></ul></div></div></footer><section
+class="footer_categorias-formacoes"><div
+class="container"><div
+class="footer_categorias_wrapper"><h2 class="footer_categorias_title">Cursos</h2><div
+class="footer_categorias_categorias footer-navegue-lista-link"><div
+class="footer_categorias_categoria">
+<a
+href="/cursos-online-programacao">Cursos de Programação</a><div
+class="footer_categorias_subcategorias">
+<a
+href="/cursos-online-programacao/logica">
+Lógica                    </a>
+|                                      <a
+href="/cursos-online-programacao/python">
+Python                    </a>
+|                                      <a
+href="/cursos-online-programacao/php">
+PHP                    </a>
+|                                      <a
+href="/cursos-online-programacao/java">
+Java                    </a>
+|                                      <a
+href="/cursos-online-programacao/dotnet">
+.NET                    </a>
+|                                      <a
+href="/cursos-online-programacao/node-js">
+Node JS                    </a>
+|                                      <a
+href="/cursos-online-programacao/linguagem-c">
+C                    </a>
+|                                      <a
+href="/cursos-online-programacao/computacao">
+Computação                    </a>
+|                                      <a
+href="/cursos-online-programacao/jogos">
+Jogos                    </a>
+|                                      <a
+href="/cursos-online-programacao/internet-das-coisas">
+IoT                    </a></div></div><div
+class="footer_categorias_categoria">
+<a
+href="/cursos-online-front-end">Cursos de Front-end</a><div
+class="footer_categorias_subcategorias">
+<a
+href="/cursos-online-front-end/front-end">
+HTML, CSS                    </a>
+|                                      <a
+href="/cursos-online-front-end/reactjs">
+React                    </a>
+|                                      <a
+href="/cursos-online-front-end/angular">
+Angular                    </a>
+|                                      <a
+href="/cursos-online-front-end/javascript">
+JavaScript                    </a>
+|                                      <a
+href="/cursos-online-front-end/jquery">
+jQuery                    </a></div></div><div
+class="footer_categorias_categoria">
+<a
+href="/cursos-online-data-science">Cursos de Data Science</a><div
+class="footer_categorias_subcategorias">
+<a
+href="/cursos-online-data-science/data-science">
+Ciência de dados                    </a>
+|                                      <a
+href="/cursos-online-data-science/business-intelligence">
+BI                    </a>
+|                                      <a
+href="/cursos-online-data-science/sql">
+SQL e Banco de Dados                    </a>
+|                                      <a
+href="/cursos-online-data-science/excel">
+Excel                    </a>
+|                                      <a
+href="/cursos-online-data-science/machine-learning">
+Machine Learning                    </a>
+|                                      <a
+href="/cursos-online-data-science/nosql">
+NoSQL                    </a>
+|                                      <a
+href="/cursos-online-data-science/estatistica">
+Estatística                    </a></div></div><div
+class="footer_categorias_categoria">
+<a
+href="/cursos-online-inteligencia-artificial">Cursos de Inteligência Artificial</a><div
+class="footer_categorias_subcategorias">
+<a
+href="/cursos-online-inteligencia-artificial/ia-para-programacao">
+IA para Programação                    </a>
+|                                      <a
+href="/cursos-online-inteligencia-artificial/ia-para-dados">
+IA para Dados                    </a></div></div><div
+class="footer_categorias_categoria">
+<a
+href="/cursos-online-devops">Cursos de DevOps</a><div
+class="footer_categorias_subcategorias">
+<a
+href="/cursos-online-devops/aws">
+AWS                    </a>
+|                                      <a
+href="/cursos-online-devops/azure">
+Azure                    </a>
+|                                      <a
+href="/cursos-online-devops/containers">
+Docker                    </a>
+|                                      <a
+href="/cursos-online-devops/seguranca">
+Segurança                    </a>
+|                                      <a
+href="/cursos-online-devops/infraestrutura-como-codigo">
+IaC                    </a>
+|                                      <a
+href="/cursos-online-devops/linux-comandos-e-processos">
+Linux                    </a></div></div><div
+class="footer_categorias_categoria">
+<a
+href="/cursos-online-design-ux">Cursos de UX & Design</a><div
+class="footer_categorias_subcategorias">
+<a
+href="/cursos-online-design-ux/ux">
+Usabilidade e UX                    </a>
+|                                      <a
+href="/cursos-online-design-ux/video">
+Vídeo e Motion                    </a>
+|                                      <a
+href="/cursos-online-design-ux/3d">
+3D                    </a></div></div><div
+class="footer_categorias_categoria">
+<a
+href="/cursos-online-mobile">Cursos de Mobile</a><div
+class="footer_categorias_subcategorias">
+<a
+href="/cursos-online-mobile/flutter-mobile">
+Flutter                    </a>
+|                                      <a
+href="/cursos-online-mobile/ios">
+iOS e Swift                    </a>
+|                                      <a
+href="/cursos-online-mobile/android">
+Android, Kotlin                    </a>
+|                                      <a
+href="/cursos-online-mobile/jogos">
+Jogos                    </a></div></div><div
+class="footer_categorias_categoria">
+<a
+href="/cursos-online-inovacao-gestao">Cursos de Inovação & Gestão</a><div
+class="footer_categorias_subcategorias">
+<a
+href="/cursos-online-inovacao-gestao/agilidade">
+Métodos Ágeis                    </a>
+|                                      <a
+href="/cursos-online-inovacao-gestao/softskills-carreira">
+Softskills                    </a>
+|                                      <a
+href="/cursos-online-inovacao-gestao/gestao-corporativa">
+Liderança e Gestão                    </a>
+|                                      <a
+href="/cursos-online-inovacao-gestao/startup-empreendedorismo">
+Startups                    </a>
+|                                      <a
+href="/cursos-online-inovacao-gestao/vendas">
+Vendas                    </a></div></div></div></div><div
+class="footer_categorias_wrapper" style="margin-top:2em"><h2 class="footer_categorias_title">Cursos universitários FIAP</h2><div
+class="footer_categorias_categorias footer-navegue-lista-link">
+<a
+target="_blank" href="https://www.fiap.com.br/graduacao/?utm_source=site-alura&utm_medium=referral&utm_campaign=BR_footer-site&utm_id=&utm_term=&utm_content=">Graduação</a> |
+<a
+target="_blank" href="https://postech.fiap.com.br?utm_source=site-alura&utm_medium=referral&utm_campaign=BR_footer-site&utm_id=&utm_term=&utm_content=">Pós-graduação</a> |
+<a
+target="_blank" href="https://www.fiap.com.br/mba?utm_source=site-alura&utm_medium=referral&utm_campaign=BR_footer-site&utm_id=&utm_term=&utm_content= ">MBA</a></div></div></div></section><style>@media not all and (min-width: 1024px) {
+			.grupoCaelum {
+				display: none;
+			}
+		}
+
+		.grupoCaelum {
+			background: #fff;
+			height: 400px;
+			border-top: 1px solid #EBEBEE;
+		}
+
+		.grupoCaelum .container {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			padding-top: 0;
+			padding-bottom: 0;
+			height: 100%;
+		}
+
+		.grupoCaelum-list {
+			display: flex;
+			list-style: none;
+			width: 80%;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-top: 1.25rem;
+		}
+
+		.grupoCaelum-title {
+			width: 20%;
+		}
+
+		.grupoCaelum-column {
+			display: inline-block;
+			padding-left: 1.1875rem;
+			width: 240px;
+			height: 350px;
+			min-width: 160px;
+		}
+
+		.grupoCaelum-column-title {
+			font-size: 0.625rem;
+			color: #d7e0e5;
+			text-transform: uppercase;
+			font-weight: 600;
+			margin-bottom: 1.1875rem;
+		}
+
+		.grupoCaelum-column-list {
+			list-style: none;
+		}
+
+		.column-item-title {
+			font-size: 0.6875rem;
+			text-align: center;
+			vertical-align: middle;
+			display: inline-block;
+			margin-left: 0.375rem;
+		}
+
+		.grupoCaelum-column:not(:first-child) {
+			border-left: solid 1px #e3e9ed;
+		}
+
+		.grupoCaelum-title {
+			display: inline-block;
+			text-decoration: none;
+			color: #657176;
+			letter-spacing: normal;
+			font-size: 1.125rem;
+			margin-top: 3.375rem;
+		}
+
+		.column-item-logo {
+			width: 30px;
+			height: 30px;
+			vertical-align: middle;
+			display: inline-block;
+		}
+
+		.column-item {
+			margin-bottom: 1.0625rem;
+		}
+
+		.column-item a {
+			text-decoration: none;
+			color: #657176;
+			display: flex;
+			align-items: center;
+		}</style><footer
+class="caelum-footer" id="caelum-footer"><div
+class="grupoCaelum"><div
+class="container"><p
+class="grupoCaelum-title">Alura</p><ul
+class="grupoCaelum-list"><li
+class="grupoCaelum-column"><p
+class="grupoCaelum-column-title">Educação em Tecnologia</p><ul
+class="grupoCaelum-column-list"><li
+class="column-item">
+<a
+target="_blank" href="https://www.fiap.com.br/">
+<img
+class="column-item-logo" src="https://www.alura.com.br/assets/img/caelumFooter/fiap.1730889067.svg" alt="logo fiap" loading="lazy" />
+<span
+class="column-item-title">FIAP</span>
+</a></li><li
+class="column-item">
+<a
+target="_blank" href="https://www.casadocodigo.com.br">
+<img
+class="column-item-logo" src="https://www.alura.com.br/assets/img/caelumFooter/cdc.1730889067.svg" alt="logo casa do codigo" loading="lazy" />
+<span
+class="column-item-title">Casa do Código</span>
+</a></li><li
+class="column-item">
+<a
+target="_blank" style="fill: #657176" href="https://www.cursospm3.com.br/">
+<img
+class="column-item-logo" src="https://www.alura.com.br/assets/img/caelumFooter/pm3.1730889067.svg" alt="logo pm3" loading="lazy" />
+<span
+class="column-item-title">PM3 - Cursos de Produto</span>
+</a></li></ul></li><li
+class="grupoCaelum-column"><p
+class="grupoCaelum-column-title">Mais Alura</p><ul
+class="grupoCaelum-column-list"><li
+class="column-item">
+<a
+target="_blank" href="https://www.startalura.com.br">
+<img
+class="column-item-logo" src="https://www.alura.com.br/assets/img/caelumFooter/startbyalura.1730889067.png" alt="logo alura start" loading="lazy" />
+<span
+class="column-item-title">START BY Alura</span>
+</a></li><li
+class="column-item">
+<a
+target="_blank" href="https://www.aluralingua.com.br">
+<img
+class="column-item-logo" src="https://www.alura.com.br/assets/img/caelumFooter/aluralingua.1730889067.svg" alt="logo alura lingua" loading="lazy" />
+<span
+class="column-item-title">Alura Língua</span>
+</a></li><li
+class="column-item">
+<a
+target="_blank" href="https://www.alura.com.br/empresas">
+<img
+class="column-item-logo" src="https://www.alura.com.br/assets/img/caelumFooter/alura-empresas.1730889067.svg" alt="logo alura para empresas" loading="lazy" />
+<span
+class="column-item-title">Alura Para Empresas</span>
+</a></li><li
+class="column-item">
+<a
+target="_blank" href="https://www.aluracursos.com">
+<img
+class="column-item-logo" src="https://www.alura.com.br/assets/img/caelumFooter/alura.1730889067.svg" alt="logo alura latam" loading="lazy" />
+<span
+class="column-item-title">Alura LATAM</span>
+</a></li></ul></li><li
+class="grupoCaelum-column"><p
+class="grupoCaelum-column-title">Comunidade</p><ul
+class="grupoCaelum-column-list"><li
+class="column-item">
+<a
+target="_blank" href="
+https://techguide.sh/								">
+<img
+class="column-item-logo" src="https://www.alura.com.br/assets/img/caelumFooter/techguide.1730889067.svg" alt="logo tech guide" loading="lazy" />
+<span
+class="column-item-title">Tech Guide</span>
+</a></li><li
+class="column-item">
+<a
+target="_blank" href="https://7daysofcode.io/">
+<img
+class="column-item-logo" src="https://www.alura.com.br/assets/img/caelumFooter/7days.1730889067.svg" alt="logo 7 days of code"loading="lazy" />
+<span
+class="column-item-title">7 days of code</span>
+</a></li><li
+class="column-item">
+<a
+target="_blank" href="https://hipsters.jobs">
+<img
+class="column-item-logo" src="https://www.alura.com.br/assets/img/caelumFooter/hipstersjobs.1730889067.svg" alt="logo Hipsters ponto Jobs" loading="lazy" />
+<span
+class="column-item-title">Hipsters ponto Jobs</span>
+</a></li></ul></li><li
+class="grupoCaelum-column"><p
+class="grupoCaelum-column-title">Podcasts</p><ul
+class="grupoCaelum-column-list"><li
+class="column-item">
+<a
+target="_blank" href="https://hipsters.tech">
+<img
+class="column-item-logo" src="https://www.alura.com.br/assets/img/caelumFooter/hipsterstech.1730889067.svg" alt="logo Hipsters ponto Tech" loading="lazy" />
+<span
+class="column-item-title">Hipsters ponto Tech</span>
+</a></li><li
+class="column-item">
+<a
+target="_blank" href="https://www.devsemfronteiras.tech/">
+<img
+class="column-item-logo" src="https://www.alura.com.br/assets/img/caelumFooter/devsemfronteiras.1730889067.svg" alt="logo Dev sem fronteiras" loading="lazy" />
+<span
+class="column-item-title">Dev sem Fronteiras</span>
+</a></li><li
+class="column-item">
+<a
+target="_blank" href="https://layerspontotech.com.br">
+<img
+class="column-item-logo" src="https://www.alura.com.br/assets/img/caelumFooter/layerstech.1730889067.svg" alt="logo Layers ponto Tech" loading="lazy" />
+<span
+class="column-item-title">Layers ponto Tech</span>
+</a></li></ul></li></ul></div></div></footer><style>#hubspot-messages-iframe-container {
+            display: none !important;
+        }</style> <script>window.addEventListener("load", () => {
+            document.querySelector("#hubspot-messages-iframe-container").remove();
+        })</script> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" async></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script> <script>hljs.initHighlightingOnLoad();</script> <script src="/assets/js/lib/svg4everybody.min.1730889068.js" async></script> <script src="/assets/js/footer/footer.1730889068.js" defer></script> <script src="/assets/js/header/menuMobile.1730889068.js" defer></script> <script src="/assets/js/header/menu.1730889068.js" defer></script> <script src="/assets/js/header/busca.1730889068.js" defer></script> <script src="/assets/js/header/cursos.1730889068.js" defer></script> <script src="/assets/js/detect.1730889068.js" async></script> <script src="/assets/js/video.1730889068.js" defer></script> <script src="/assets/js/countdown.1730889068.js" async></script> <script src="/assets/js/header/cookie-influencer.1730889068.js" async></script> <script src="/assets/js/trackers.1730889068.js" async></script> <script src="/assets/js/courseIconFallback.1730889068.js" defer></script> <script src="/assets/js/artigos/table-of-contents.1730889068.js" async></script> <script src="/assets/js/artigos/tracker-post-read.1730889068.js" async></script> <script src="/assets/js/artigos/tracker-click-banner-article.1730889068.js" async></script> <script src="https://static.codepen.io/assets/embed/ei.js" async></script> <script src="/assets/js/artigos/iframe-loader.1730889068.js" async></script> </body></html>
