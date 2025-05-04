@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-product="alura" style="scroll-behavior: smooth;"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+
+	
+		
+
+
+
+<!-- Google Tag Manager -->
+<script async="" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/clarity.js"></script><script type="text/javascript" async="" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/j5yix797ro.js"></script><script type="text/javascript" async="" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/js"></script><script async="" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/OiIKV8DdRsC6DWlZuu25.js"></script><script type="text/javascript" async="" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/23465.js"></script><script async="" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/analytics.js"></script><script type="text/javascript" async="" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/gtqukryqvi.js"></script><script async="" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/qukryqvi.js"></script><script async="" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/gtm.js"></script><script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer', 'GTM-TN542JN');
+</script>
+<!-- End Google Tag Manager -->
+
+
+	<script type="text/javascript">
+        dataLayer.push({
+            'tipoPagina': 'Aula',
+            'curso': 'Python para Data Science: trabalhando com funções, estruturas de dados e exceções'
+        });
+	</script>
+
+	
+
+	
+		
+
+
+
+
+    
+        
+            <!-- Google Tag Manager -->
+            <script>
+                ;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://load.stape.alura.com.br/qukryqvi.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayerAlura','GTM-NTLWWLR');
+            </script>
+            <!-- End Google Tag Manager -->
+        
+        
+    
+
+
+    <script>
+        let dataLayerAluraTest = window.dataLayerAluraTest || [];
+        let dataLayerAlura = window.dataLayerAlura || [];
+        dataLayerAlura.push({
+            'event': 'virtual_page_view',
+            'page_category': 'Aula',
+            
+            
+            
+                
+                    
+                    
+                        
+                        'user_id': '4695267',
+                        'plan': 'Pro',
+                        'type': 'B2C',
+                        'company_id':'',
+                        'first_purchase_date': '2023-11-20',
+                        'last_purchase_date': '2023-11-20',
+                        'expiration_date': '2024-11-20',
+                        'email': '0560438de78f04fb4035de392a5c4b68c5a4568a909435129fa5e01a1d01b15a'
+                    
+                
+            
+        });
+    </script>
+
+
+
+
+
+	
+
+	<title>Python para Data Science: trabalhando com funções, estruturas de
+ dados e exceções: Aula 4 - Atividade 12 Referências | Alura - Cursos 
+online de tecnologia</title>
+
+	<link rel="shortcut icon" href="https://cursos.alura.com.br/assets/images/alura/favicon.ico">
+
+	<link href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/css.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com/">
+
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/video-js.7b9aee00.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/silvermine-videojs-quality-selector.min.de928d55.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/prettify.9c184279.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/github.754087c4.css">
+
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/base.f643e441.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/formattedText.e58775de.css">
+
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/container.ca700c42.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/classPage.fb05653a.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/menuSettings.f67f102b.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/taskProgress.a5300583.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/taskMessageInfo.67eb9bc6.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/alternativeList.a80939d3.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/taskFeedback.4bda0782.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/markdown.3ec31c65.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/finishSection.bee005cf.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/phrase.6d459a32.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/hqexplanation.3ed41021.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/openquestion.2889f14f.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/textcontent.7298b79f.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/video.e82ab0eb.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/singlechoice.b545e19f.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/music.8fe6cab6.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/multiplechoice.70f60e4c.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/videodialog.36286910.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/fillintheblank.59273039.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/speakingpractice.13b2c5c5.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/pronunciationpractice.d512f574.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/repetition.492af846.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/genericVideo.4767d8de.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/projectSubmit.ce2f9d80.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/sortBlocks.7b9eb1fc.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/maze.e1a78c74.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/extraContentTask.b2d126e6.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/taskContent.1ef47209.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/taskButtons.ed4fd65b.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/alert.ec6bb786.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/markdownEditor.600de57a.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/audioPlayer.0a362c88.css">
+	
+	
+	<link rel="stylesheet" type="text/css" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/clipper.647d33f8.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/back-to-top.9a8b5967.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/videoShortcutsModal.e1c7fc31.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/modal.5da2b30a.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/modalCoursePreviewMode.fe9f769f.css">
+	
+		<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/monokai-theme-hljs.b874d000.css">
+		<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/chatbot.96528578.css">
+	
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/successMessage.cb6c074e.css">
+
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/dark-mode.711891a8.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/taskFeedbackAnswer.72669c00.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/theater-mode.5995e9f2.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/autoplay-videojs.eefac430.css">
+	<link rel="stylesheet" href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/linkSubmit.ddbc8743.css">
+
+	
+	<style type="text/css">
+		.task:before, .video-js .vjs-play-progress {
+			background-color: #2A7AE4;
+		}
+
+
+	</style>
+
+	<!-- Remove cookie banner from hubspot -->
+	<style>
+		div#hs-eu-cookie-confirmation {
+			display: none;
+		}
+	</style>
+
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/sha256.min.js"></script><script async="" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/hotjar-1638253.js"></script><script async="" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/modules.e4b2dc39f985f11fb1e4.js" charset="utf-8"></script></head>
+
+
+
+
+<body class="darkmode ">
+<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/avatarOnError.f8bd8956.js"></script><script type="text/javascript" id="">elements=document.querySelectorAll("input, select");elements.forEach(function(b,c){b.addEventListener("change",function(a){a=this.getAttribute("name");dataLayer.push({event:"gaEvent",eventCategory:"Formul\u00e1rios",eventAction:"Altera\u00e7\u00e3o",eventLabel:a})})});</script>
+<script type="text/javascript" id="">var key="Think_Again45984$%";function log(a){console.log(a)}function getPars(){var a={};window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(b,c,d){a[c]=d});return a}function userId(a){a=sha256.hmac(key,a);dataLayer.push({event:"userId",userId:a})}var script=document.createElement("script");script.onload=function(){var a=getPars().e;a&&userId(a);a=document.querySelectorAll('[type\x3d"email"]');for(var b=0;b<a.length;b++)a[b].onchange=function(){userId(this.value)}};script.src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js";
+document.head.appendChild(script);</script>
+
+
+	
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN542JN"
+				  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+	
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTLWWLR"
+				  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<section class="task class-page-for-HQ_EXPLANATION " data-allow-answer="true" data-task-section-exam="false" data-task-type="hqexplanation" data-task-id="146835" data-author-id="4695267" data-course-code="python-data-science-funcoes-estruturas-dados-excecoes" data-section-name="Lidando com exceções" data-section-id="15956" data-section-number="4" data-domain="cursos.alura.com.br" data-hasfeedbackanswer="false" data-url-prefix="/" data-already-seen-task="true" data-course-name="Python para Data Science: trabalhando com funções, estruturas de dados e exceções" data-category-name="Data Science" data-subcategory-name="Data Science" data-workload="8" data-teachers="Afonso Augusto Rios">
+
+	<section class="task-body">
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+<header class="task-body-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <button title="Fechar menu" aria-label="Fechar menu" type="button" class="theatermode openMenu-button task-menu-button " id="menu-button-header">
+        </button>
+    
+    <div class="container">
+        <h1 class="task-body-header-title">
+            
+            
+            <svg class="task-body-header-title-svg" aria-label="Atividade de Explicação">
+                <use xlink:href="/assets/images/classPage/icon-menu-icons.svg#COMPLEMENTARY_INFORMATION"></use>
+            </svg>
+            <small>12</small>
+            <span class="task-body-header-title-text"> Referências</span>
+        </h1>
+        
+            <div class="task-body-header-actions">
+                <a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/146835/next" class="task-actions-button task-actions-button-next task-submit bootcamp-primary-button-theme" style="background-color: #2A7AE4">Próxima Atividade</a>
+            </div>
+        
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+<div class="theater-video settings">
+	<button type="button" class="settings-button" aria-label="Configurações">
+		<svg class="settings-button-icon">
+			<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#MENU_SETTINGS"></use>
+		</svg>
+	</button>
+	<div class="settings-box">
+		<ul class="settings-box-list">
+			
+				<li class="settings-box-item">
+					<button data-light-mode="Modo claro" data-dark-mode="Modo noturno" class="light-mode-action --menu-setting darkModeButton settings-box-item-darkmode">
+							Modo claro
+					</button>
+				</li>
+			
+			
+				
+				
+				
+				
+					
+						<li class="settings-box-item settings-box-item-suggestion"><a href="https://cursos.alura.com.br/suggestions/new/python-data-science-funcoes-estruturas-dados-excecoes/146835/question">Sugerir alteração</a></li>
+					
+				
+			
+			
+		</ul>
+		<span class="settings-box-title"></span>
+	</div>
+</div>
+
+        
+    </div>
+</header>
+		<div class="task-body__wrapper">
+			<main class="task-body-main container" data-should-warn="false">
+				
+
+
+
+
+
+
+
+	
+		
+
+
+
+
+<section class="hqExplanation" id="task-content">
+	<div class="container">
+	
+
+
+
+
+
+
+
+
+
+
+<div class="video settings">
+	<button type="button" class="settings-button" aria-label="Configurações">
+		<svg class="settings-button-icon">
+			<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#MENU_SETTINGS"></use>
+		</svg>
+	</button>
+	<div class="settings-box">
+		<ul class="settings-box-list">
+			
+				<li class="settings-box-item">
+					<button data-light-mode="Modo claro" data-dark-mode="Modo noturno" class="light-mode-action --menu-setting darkModeButton settings-box-item-darkmode">
+							Modo claro
+					</button>
+				</li>
+			
+			
+				
+				
+				
+				
+					
+						<li class="settings-box-item settings-box-item-suggestion"><a href="https://cursos.alura.com.br/suggestions/new/python-data-science-funcoes-estruturas-dados-excecoes/146835/question">Sugerir alteração</a></li>
+					
+				
+			
+			
+		</ul>
+		<span class="settings-box-title"></span>
+	</div>
+</div>
+
+		<div class="formattedText" data-external-links="">
+			<ol><li><a href="https://docs.python.org/pt-br/3/" rel="nofollow noopener" target="_blank">Documentação Python 3 (gratuito, português, documentação)</a><blockquote>
+<p>A documentação oficial do Python 3 está repleta de explicações e 
+detalhes técnicos sobre a linguagem de programação. Muito útil para quem
+ está aprendendo ou já é um profissional experiente em Python e busca 
+estar sempre atualizado.</p>
+</blockquote>
+</li><li><a href="https://pypi.org/" rel="nofollow noopener" target="_blank">PyPI (gratuito, inglês, repositório de código)</a><blockquote>
+<p>Python Package Index (PyPI) é o repositório oficial de pacotes de 
+software para a linguagem de programação Python. Os usuários podem 
+buscar por diferentes pacotes e inclusive disponibilizar seus próprios.</p>
+</blockquote>
+</li><li><a href="https://wiki.python.org.br/ListaDeExercicios" rel="nofollow noopener" target="_blank">Lista de Exercícios Python Brasil (gratuito, português, código)</a><blockquote>
+<p>Uma extensa lista de exercícios de Python, dividida em categorias e 
+subcategorias. Ideal para quem está aprendendo a programar em Python e 
+quer colocar a mão na massa.</p>
+</blockquote>
+</li><li><a href="https://towardsdatascience.com/how-list-comprehensions-can-help-your-code-look-better-and-run-smoother-3cf8f87172ae" rel="nofollow noopener" target="_blank">List Comprehension em Python (gratuito, inglês, texto)</a><blockquote>
+<p>Neste artigo, o autor explica como o uso de list comprehension pode 
+tornar o código Python mais limpo e eficiente. Ideal para os 
+programadores que querem aperfeiçoar seus conhecimentos na linguagem.</p>
+</blockquote>
+</li><li><a href="https://realpython.com/python-zip-function/" rel="nofollow noopener" target="_blank">Função <code>zip</code> em Python (gratuito, inglês, texto)</a><blockquote>
+<p>Este é um tutorial sobre a função integrada <code>zip</code> do 
+Python, que é usada para combinar iteráveis. O tutorial aborda 
+diferentes aspectos da função e apresenta exemplos de seu uso.</p>
+</blockquote>
+</li><li><a href="https://www.programiz.com/python-programming/methods/built-in/zip" rel="nofollow noopener" target="_blank"><code>zip</code> em Python (gratuito, inglês, texto)</a><blockquote>
+<p>Um guia explicativo sobre a função <code>zip</code> no Python. O conteúdo detalha como a função funciona, para que serve e como aplicá-la corretamente.</p>
+</blockquote>
+</li><li><a href="https://realpython.com/python-exceptions/" rel="nofollow noopener" target="_blank">Exceções em Python (gratuito, inglês, texto)</a><blockquote>
+<p>Um guia detalhado sobre como lidar com exceções em Python. O conteúdo
+ é bem explicativo e oferece exemplos práticos para ajudar na 
+compreensão do leitor.</p>
+</blockquote>
+</li></ol>
+		</div>
+	</div>
+</section>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+				
+					
+
+
+
+
+
+
+	
+	
+		<section class="task-actions">
+			<div class="container">
+				
+
+
+
+
+
+
+    
+        
+        <a href="https://cursos.alura.com.br/forum/curso-python-data-science-funcoes-estruturas-dados-excecoes/exercicio-referencias/146835/novo" class=" task-actions-button task-actions-button-forum bootcamp-secondary-button-theme" target="_blank">
+            
+                
+                
+                    Discutir no Fórum
+                
+            
+        </a>
+    
+
+
+
+				
+				
+				
+				
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/146835/next" style="background-color: #2A7AE4" class="task-actions-button task-body-actions-button task-actions-button-next bootcamp-next-button bootcamp-primary-button-theme">Próxima Atividade</a>
+				
+			</div>
+		</section>
+	
+
+
+				
+				
+			</main>
+			
+				
+
+
+
+
+<section class="chatbot-suggestion-by-selection-section" style="display: none;">
+    <div class="chatbot-suggestion-by-selection-container chatbot-suggestion-section-active-menu">
+        <div class="chatbot-suggestion-by-selection-icon-helper">
+            <img class="chatbot-icon-selection-tooltip" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/luri-icon.svg" alt="Luri">
+            <p class="chatbot-selection-label">Ajuda da Luri ✨</p>
+        </div>
+        
+            <button class="chatbot-suggestion-by-selection-button" value="Me explique de outra forma">
+                Me explique de outra forma
+            </button>
+        
+            <button class="chatbot-suggestion-by-selection-button" value="Me explique utilizando uma analogia">
+                Me explique utilizando uma analogia
+            </button>
+        
+            <button class="chatbot-suggestion-by-selection-button" value="Me dê um exemplo">
+                Me dê um exemplo
+            </button>
+        
+    </div>
+</section>
+
+			
+		</div>
+	</section>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<aside class="task-menu task-menu-iframe" style="position: fixed; transform: translateY(-749.933px);">
+	<section class="task-menu-header">
+			<a class="task-menu__return-to-course" href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes" title="Ir para página do curso">
+		</a><div class="task-menu-header-info"><a class="task-menu__return-to-course" href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes" title="Ir para página do curso">
+			</a><a class="task-menu-header-info-title" href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes" title="Ir para página do curso">
+				
+					
+					
+						<img src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/python-data-science-funcoes-estruturas-dados-excecoes.svg" alt="ícone Python para Data Science: trabalhando com funções, estruturas de dados e exceções" class="task-menu-header-info-title-icon " width="37.5px" height="37.5px">
+					
+				
+				<h2 class="task-menu-header-info-title-text">Python para Data Science: trabalhando com funções, estruturas de dados e exceções</h2>
+			</a>
+			
+				<div class="task-menu-header-info-progress">
+					
+					<span class="task-menu-header-info-progress-percentage ">96%</span>
+					
+						
+						
+							
+						
+					
+					<span class="task-menu-header-info-progress-bar" style="background-image: linear-gradient(to right, #9de482, #9de482 96%, transparent 96%);"></span>
+				</div>
+			
+		</div>
+	</section>
+	
+		<form class="task-menu-header-search" target="_blank" action="/search/course/python-data-science-funcoes-estruturas-dados-excecoes" method="get">
+			<label class="task-menu-header-search-title" for="query">Buscar neste curso</label>
+			<input class="task-menu-header-search-input" name="query" id="query" type="text" required="">
+			<button class="task-menu-header-search-button">Pesquisar <img aria-hidden="true" class="task-menu-header-search-button-img" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/icon-new-page.svg"></button>
+		</form>
+	
+	
+	<section class="task-menu-section sr-only">
+		<div class="task-menu-section-title">
+			<span class="task-menu-section-title-number ">Aula<strong>04</strong>
+				<span>de 04</span>
+			</span>
+			<h3 class="task-menu-section-title-text">
+				Lidando com exceções
+			</h3>
+		</div>
+	</section>
+	<section class="task-menu-sections">
+		<h2 class="task-menu-sections-title">
+			Aula Atual
+		</h2>
+		<select class="task-menu-sections-select" onchange="location.href='/course/python-data-science-funcoes-estruturas-dados-excecoes/section/'+this.value+'/tasks';">
+			
+				<option value="15953">01. Bibliotecas</option>
+			
+				<option value="15954">02. Funções</option>
+			
+				<option value="15955">03. Estruturas de dados</option>
+			
+				<option value="15956" selected="selected">04. Lidando com exceções</option>
+			
+		</select>
+	</section>
+	<nav class="task-menu-nav">
+		<h2 class="task-menu-nav-title">
+			Atividades
+			<span>12 de 14</span>
+		</h2>
+		<ul class="task-menu-nav-list">
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/126467" class="task-menu-nav-item-link task-menu-nav-item-link-HQ_EXPLANATION">
+						
+						
+					<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Explicação concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#HQ_EXPLANATION"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">01</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Projeto da aula anterior">
+							Projeto da aula anterior
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/126468" class="task-menu-nav-item-link task-menu-nav-item-link-HQ_EXPLANATION">
+						
+						
+					<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Explicação concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#COMPLEMENTARY_INFORMATION"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">02</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Para saber mais: tipos de exceções">
+							Para saber mais: tipos de exceções
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/125905" class="task-menu-nav-item-link task-menu-nav-item-link-VIDEO">
+						
+						
+					<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Vídeo concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#VIDEO"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">03</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Tratando exceções">
+							Tratando exceções
+						</span>
+						
+						<span class="task-menu-nav-item-infos">
+							
+								<span class="task-menu-nav-item-videoDuration" title="Ir para o Vídeo">14min</span>
+							
+						</span>
+					</span>
+					
+					</a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/126469" class="task-menu-nav-item-link task-menu-nav-item-link-SINGLE_CHOICE">
+						
+						
+					<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Única escolha concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#SINGLE_CHOICE"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">04</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Vantagens das exceções">
+							Vantagens das exceções
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/125906" class="task-menu-nav-item-link task-menu-nav-item-link-VIDEO">
+						
+						
+					<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Vídeo concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#VIDEO"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">05</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Cláusula finally">
+							Cláusula finally
+						</span>
+						
+						<span class="task-menu-nav-item-infos">
+							
+								<span class="task-menu-nav-item-videoDuration" title="Ir para o Vídeo">04min</span>
+							
+						</span>
+					</span>
+					
+					</a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/126470" class="task-menu-nav-item-link task-menu-nav-item-link-MULTIPLE_CHOICE">
+						
+						
+					<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Múltipla escolha concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#MULTIPLE_CHOICE"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">06</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Onde está o erro?">
+							Onde está o erro?
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/125907" class="task-menu-nav-item-link task-menu-nav-item-link-VIDEO">
+						
+						
+					<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Vídeo concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#VIDEO"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">07</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Raise">
+							Raise
+						</span>
+						
+						<span class="task-menu-nav-item-infos">
+							
+								<span class="task-menu-nav-item-videoDuration" title="Ir para o Vídeo">12min</span>
+							
+						</span>
+					</span>
+					
+					</a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/126471" class="task-menu-nav-item-link task-menu-nav-item-link-SINGLE_CHOICE">
+						
+						
+					<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Única escolha concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#SINGLE_CHOICE"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">08</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Lançando minha exceção">
+							Lançando minha exceção
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/126473" class="task-menu-nav-item-link task-menu-nav-item-link-TEXT_CONTENT">
+						
+						
+					<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Sem Resposta do Aluno concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#CHALLENGE"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">09</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Desafio: hora da prática">
+							Desafio: hora da prática
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/126472" class="task-menu-nav-item-link task-menu-nav-item-link-HQ_EXPLANATION">
+						
+						
+					<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Explicação concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#HQ_EXPLANATION"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">10</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Projeto final">
+							Projeto final
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/126474" class="task-menu-nav-item-link task-menu-nav-item-link-HQ_EXPLANATION">
+						
+						
+					<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Explicação concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#WHAT_WE_LEARNED"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">11</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="O que aprendemos?">
+							O que aprendemos?
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item task-menu-nav-item--selected">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/146835" class="task-menu-nav-item-link task-menu-nav-item-link-HQ_EXPLANATION">
+						
+						
+					<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Explicação concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#COMPLEMENTARY_INFORMATION"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">12</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Referências">
+							Referências
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/125908" class="task-menu-nav-item-link task-menu-nav-item-link-VIDEO">
+						
+						
+					<svg class="task-menu-nav-item-svg " aria-label="Atividade de Vídeo não concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#VIDEO"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">13</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Conclusão">
+							Conclusão
+						</span>
+						
+						<span class="task-menu-nav-item-infos">
+							
+								<span class="task-menu-nav-item-videoDuration" title="Ir para o Vídeo">04min</span>
+							
+						</span>
+					</span>
+					
+					</a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/python-data-science-funcoes-estruturas-dados-excecoes/task/126475" class="task-menu-nav-item-link task-menu-nav-item-link-HQ_EXPLANATION">
+						
+						
+					<svg class="task-menu-nav-item-svg " aria-label="Atividade de Explicação não concluída">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#HQ_EXPLANATION"></use>
+					</svg>
+					<span class="task-menu-nav-item-number">14</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Créditos">
+							Créditos
+						</span>
+						
+					</span></a>
+				</li>
+			
+			
+		</ul>
+	</nav>
+	
+	<section class="task-menu-others">
+		<h2 class="task-menu-others-title ">
+			Outros Links
+		</h2>
+		
+			
+			<a class="task-menu-others-link task-menu-others-link-discord" href="https://discord.gg/SK9bj7hEYD" target="_blank">
+				Discord Alura
+			</a>
+		
+		
+			
+			<a href="https://cursos.alura.com.br/forum/curso-python-data-science-funcoes-estruturas-dados-excecoes/todos" class="task-menu-others-link task-menu-others-link-forum" title="Ir para o fórum do curso" target="_blank">
+				
+					
+					
+						Fórum do curso
+					
+				
+			</a>
+		
+			<a href="https://cursos.alura.com.br/dashboard" class="task-menu-others-link task-menu-others-link-curso" title="Ir para a página principal">Voltar para Dashboard</a>
+		<section class="task-container-flex ">
+			
+				<div class="task-group-border ">
+					<button data-light-mode="Modo claro" data-dark-mode="Modo noturno" class="light-mode-action --menu task-edit-mode settings-box-item-darkmode darkModeButton">
+							Modo claro
+					</button>
+				</div>
+			
+		</section>
+	</section>
+	<section class="task-menu-footer">
+		<a class="task-menu-footer-user" href="https://cursos.alura.com.br/user/ismaelshenrique11" title="Ir para sua página de usuário">
+			<img src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/84a78e3e-8d83-496b-9969-059dbcc5c1f2.webp" alt="Gravatar de Ismael dos Santos Menezes" class="task-menu-footer-img" width="40px" height="40px">
+			
+				<p class="task-menu-footer-detalhes">
+					<span class="task-menu-footer-detalhes-nome">Ismael dos Santos Menezes</span>
+					<span class="task-menu-footer-detalhes-xp">
+						3.5k xp
+					</span>
+				</p>
+			
+			<input type="hidden" value="">
+			<input type="hidden" value="">
+		</a>
+		<a href="https://cursos.alura.com.br/dashboard" class="task-menu-footer-logo">
+			<img src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/icon-menu-alura.svg" alt="Logo da Alura" class="task-menu-footer-logo-image" width="19px" height="32px" title="Ir para a página principal">
+		</a>
+	</section>
+</aside>
+
+
+
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<aside id="chatbot" class="chatbot-resizable animate" style="z-index: 100">
+    <div class="chatbot-cta">
+        <div class="chatbot-tooltip">E aí, precisa de ajuda?</div>
+        <img src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/luri-icon-cta.svg" alt="Luri">
+    </div>
+
+    <div class="chatbot-header">
+        <div class="chatbot-header__icon">
+            <img src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/luri-icon.svg" alt="Ícone da Luri">
+        </div>
+        <div class="chatbot-header__about">
+            <div class="chatbot-header__about_row">
+                <div class="chatbot-header__about-name">Luri</div>
+            </div>
+        </div>
+        <div class="chatbot-header_buttons_wrapper">
+            <button class="chatbot-header__expand-collapse_button">
+                <img src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/vector-expand.svg" alt="Expadir">
+            </button>
+            <button class="chatbot-header__close">
+                <img src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/close.svg" alt="Fechar">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="suggestion-main-container">
+        <div class="suggestion-luri-presentation">
+            <img src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/luri-icon.svg" alt="Ícone da Luri">
+            <p>Oi, eu sou Luri :) Estou aqui para te ajudar caso tenha alguma dúvida no conteúdo da aula.</p>
+        </div>
+        <div class="chatbot-footer__questions">
+            
+                <button class="chatbot-footer__questions-item">Como posso analisar se apliquei os conceitos da aula corretamente?</button>
+            
+                <button class="chatbot-footer__questions-item">Faça um resumo dessa aula</button>
+            
+                <button class="chatbot-footer__questions-item">Explique a aula usando analogias</button>
+            
+        </div>
+    </div>
+
+    <div class="chatbot-body style-scroll"></div>
+    <div class="spotlight-large"></div>
+
+    <div class="chatbot-footer">
+        <div class="chatbot-footer__actions">
+            <button class="chatbot-footer__actions-btn chatbot-footer__actions-clean-conversation">Limpar conversa</button>
+        </div>
+        <form>
+            
+                
+                
+                    <div class="chatbot-footer__send-area">
+                        <div class="chatbot-footer__send-area-input">
+                            <div class="chatbot-footer__send-area-input-area">
+                                <textarea id="textArea" class="chatbot-footer__send-area-content style-scroll" rows="1" placeholder="Escreva sua mensagem..."></textarea>
+                            </div>
+                        </div>
+                        <button class="chatbot-footer__send-area-btn">
+                            <img src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/icon-send.svg" alt="Enviar">
+                        </button>
+                    </div>
+                
+            
+
+        </form>
+        <div class="chatbot-footer__messages">
+            <div class="chatbot-footer__feedback">
+                <a href="https://alura.tv/4amWTdZ" target="_blank">FAQ</a>
+                <img src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/ellipse.webp">
+                <a href="https://tally.so/r/waeWvB" target="_blank">Enviar feedback</a>
+            </div>
+            <a href="https://cursos.alura.com.br/chatbot/conversations?courseCode=python-data-science-funcoes-estruturas-dados-excecoes">Histórico de conversas</a>
+        </div>
+
+    </div>
+
+    <div class="chatbot-resizer"></div>
+</aside>
+    
+
+</section><div class="full-screen__panel" style="display: none;">
+				<img id="full-screen__image" class="full-screen__image" src="" alt="">
+				<div class="full-screen__actions">
+				<button class="button buttonAction partitura-download">Anterior</button><button class="button buttonAction partitura-download">Sair</button><button class="button buttonAction partitura-download">Próximo</button></div> 
+			</div>
+
+
+
+
+
+
+
+
+
+
+	
+		
+		<!-- Hotjar Tracking Code for https://cursos.alura.com.br -->
+		<script>
+			(function(h,o,t,j,a,r){
+				h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+				h._hjSettings={hjid:1638253,hjsv:6};
+				a=o.getElementsByTagName('head')[0];
+				r=o.createElement('script');r.async=1;
+				r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+				a.appendChild(r);
+			})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+
+        
+            <script>
+                hj('event', "hj_estudante_com_acesso_luri");
+            </script>
+        
+	
+
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/jquery-3.6.0.min.7c14a783.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/buttonToggle.41524be9.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/sectionMenu.2bb600e2.js" async=""></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/submitTaskVerifier.e6e3bd5f.js"></script>
+
+    <script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/purify.min.bd253e08.js"></script>
+
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/caret.2e5c0c9d.js" async=""></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/keydownWatchers.fdc4ec79.js" async=""></script>
+
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/highlight.min.9b99da81.js" async=""></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/highlight.init.5870d8cf.js" async=""></script>
+
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/preventsMultipleInteractions.19502e19.js" async=""></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/assessment.78d1fb98.js" async=""></script>
+
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/menuSettings.fb011b3b.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/aria.a82b16ad.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/ProjectSubmit.39c1017a.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/LinkSubmit.e67a456a.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/classPage.096ce3d4.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/buttonDarkMode.fd8f514a.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/phrase.dfd04ee1.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/feedback.7962df4a.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/ExtraContentProgressRequest.7f84629c.js"></script>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/partitura.ed5e8367.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/audioProgress.049144a0.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/audioPlayer.38483a63.js"></script>
+
+		
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/VideoTranscription.35d43dac.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/MarkdownProcessing.4fa8352c.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/clipboard.min.af8ab365.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/Clipper.4471c01b.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/scroll-to-top.1d1e7575.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/shortcuts-action.eba8a7c6.js"></script>
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/ModalAndAlertHandler.81e9a5c4.js"></script>
+    
+        <script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/interactjs.afa74568.js"></script>
+        <script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/chatbotInteractAnimate.09a97137.js"></script>
+        <script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/ChatbotUtils.e5a1bad7.js"></script>
+        <script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/ChatbotTask.717e34fb.js"></script>
+        <script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/ChatbotSuggestionByTextSelection.b30432b2.js"></script>
+        <script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/ChatbotFullscreenHandler.c657f816.js"></script>
+        <script>
+            const gnarusUserContentConfig = {
+                endpoint: 'https://www.gnarususercontent.com.br/images',
+                token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTY0NDM0MzQsImtleSI6IjdiMjcwMTliLWRlNDgtNGQyZi1iOTYyLTFkOWYyMzcyZjliNyJ9.ZBnDO5eAPNeO8zVrIZiYM0RiHiFkaQMkGR3jHKyltD0',
+                envieId: '1',
+                userId: '4695267',
+            };
+
+            new ChatbotTask({
+                codeAreaDefaultCopyMessage: "Copiar código",
+                codeAreaCopiedMessage: "Copiado!",
+                firstAssistantMessage: "Oi, eu sou Luri :) Estou aqui para te ajudar caso tenha alguma dúvida no conteúdo da aula.",
+                upvoteIconAltMessage: "Ícone do polegar para cima, indicando que a resposta te ajudou",
+                downvoteIconAltMessage: "Ícone do polegar para baixo, indicando que a resposta não te ajudou",
+                copyIconAltMessage: "Copiar texto da Luri para área de transferêcia",
+				upvoteIconTooltipMessage: "Resposta boa",
+				downvoteIconTooltipMessage: "Resposta ruim",
+				copyIconTooltipMessage: "Copiar",
+				downvoteLabelMessage: "",
+                wrongAnswerTitle: "Gostaria de revisar o conteúdo do exercício?",
+				suggestAnalogyTitle: "<p>Olá! 👋</p><p>Gostaria de uma analogia sobre a aula para facilitar o entendimento?</p>",
+                wrongAnswerButton: "Sim, me ajude a revisar",
+                wrongAnswerPrompt: "Luri, me explique o enunciado deste exercício",
+				suggestAnalogyButton: "Sim, me explique usando analogias",
+				suggestAnalogyPrompt: "Luri, me explique a aula usando analogias de maneira detalhada",
+                closeButton: "Fechar",
+                removeImageIconAltText: "Ícone de X azul em um círculo para remover a imagem"
+            }, gnarusUserContentConfig, "false").setupListeners();
+        </script>
+		<script>
+			new ChatbotSuggestionByTextSelection();
+			new ChatbotFullscreenHandler();
+		</script>
+    
+
+
+	<script>
+		new VideoTranscription();
+		new MarkdownProcessing("https://cursos.alura.com.br").onLoad();
+		new Clipper("Copiar código", "Código copiado!", "Falha ao copiar o código!");
+		window.addEventListener('load', () => new BackToTopButton().init());
+		new ModalAndAlertHandler('python-data-science-funcoes-estruturas-dados-excecoes').setupListeners();
+	</script>
+
+
+
+	
+
+	<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/darkMode.d01066d5.js"></script>
+
+	
+		
+
+
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-42101548-1', 'alura.com.br');
+
+    
+        ga('set', 'userId', '4695267');
+    
+
+    ga('require', 'displayfeatures');
+    
+    ga('send', 'pageview');
+    
+    
+</script>
+	
+
+	<script>new DarkModeToggler().refreshListener()</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/uploadImages.7c1a29db.css" rel="stylesheet">
+
+<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/UploadProgress.14749111.js"></script>
+<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/ImagesClient.c3b4152f.js"></script>
+
+<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/marked.min.c69e14e8.js"></script>
+
+<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/enableForumButtons.1293253c.js"></script>
+
+<script>
+    var IMAGE_UPLOAD_MESSAGES = {
+        imageUploadMessageInit: `Anexe arquivos arrastando e soltando`,
+        imageUploadMessageDragEnter: `Solte a imagem para fazer o upload`,
+        imageUploadMessageDrop: `Enviando a imagem #images_names#`,
+        imageUploadMessageProgress: `Enviando a imagem #images_names#: #progress#%`,
+        imageUploadMessageUploaded: `Imagem enviada com sucesso!`,
+        imageUploadMessageSizeUnits: `MB`,
+        imageUploadMessageTag: `![Insira aqui a descrição dessa imagem para ajudar na acessibilidade](#url#) `
+    }
+</script>
+
+
+    
+        <link href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/hackeditor.min.fcf421a7.css" rel="stylesheet">
+        <link href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/hackeditor.custom.e0057fb6.css" rel="stylesheet">
+        <link href="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/github.754087c4.css" rel="stylesheet">
+
+        <script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/hackeditor.min.4c55d65b.js"></script>
+        <script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/hackeditor.custom.b88c034d.js"></script>
+        <script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/highlight.min.9b99da81.js"></script>
+        <script>
+            const setupEditorsOnPage = (e) => {
+                const toolbarActionsHints = {
+                    toggleHeadingActionHint: `Título`,
+                    toggleBoldActionHint: `Negrito`,
+                    toggleItalicActionHint: `Itálico`,
+                    toggleOrderedListActionHint: `Lista ordenada`,
+                    toggleUnorderedListActionHint: `Lista não ordenada`,
+                    togglePreviewActionHint: `Pré-visualizar`,
+                    drawTableActionHint: `Inserir Tabela`,
+                    drawCodeActionHint: `Inserir bloco de código`,
+                    drawLinkActionHint: `Inserir Link`,
+                    drawImageActionHint: `Inserir Imagem`,
+                    drawUploadedImageActionHint: `Upload de imagem`,
+                    undoActionHint: `Desfazer`,
+                    redoActionHint: `Refazer`
+                }
+
+                const imageUploadErrors = {
+                    imageErrorLimit: `Você só pode inserir 5 imagens por vez!`,
+                    imageFileNotAllowed: `O arquivo filename não é permitido, apenas imagens!`,
+                    imageVeryLarge: `O arquivo filename é maior que o limite de 2 MB.`,
+                    imageMaliciousFile: `O arquivo filename contém conteúdo malicioso.`
+                }
+
+                window.editors = window.editors || [];
+
+                const editorsElements = window.editors.map(ed => ed.element.id);
+
+                const textAreaEditors = Array.from(document.querySelectorAll('.hackeditor > textarea'));
+                textAreaEditors
+                    .filter(e => e.closest('.taskForms') == null)
+                    .filter(e => editorsElements.length == 0 ? true : !editorsElements.includes(e.id))
+                    .forEach(editorTextArea => {
+                        const editor = setupHackEditor({
+                            editorOptions: {
+                                element: editorTextArea,
+                                initialValue: editorTextArea.innerText,
+                                syncPreview: true,
+                                maxHeight: "300px",
+                                toolbarActionsHints,
+                                imageUploadMessages: IMAGE_UPLOAD_MESSAGES,
+                                imageUploadErrors,
+                                imageUploadClient: new ImagesClient(
+                                    'https://www.gnarususercontent.com.br/images',
+                                    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTY0NDM0MzQsImtleSI6IjdiMjcwMTliLWRlNDgtNGQyZi1iOTYyLTFkOWYyMzcyZjliNyJ9.ZBnDO5eAPNeO8zVrIZiYM0RiHiFkaQMkGR3jHKyltD0',
+                                    1,
+                                    4695267
+                                ),
+                                allowImageUpload: editorTextArea.dataset.allowImageUpload
+                            },
+                            extensions: {
+                                DOMPurify,
+                                marked,
+                                hljs
+                            }
+                        });
+
+                        window.editors.push({
+                            instance: editor,
+                            element: editorTextArea,
+                        });
+
+                        enableForumButtons();
+                });
+            }
+
+            window.addEventListener('DOMContentLoaded', setupEditorsOnPage);
+            document.addEventListener('change', setupEditorsOnPage);
+        </script>
+    
+    
+
+
+<script src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/IframeChecker.05103d26.js"></script>
+
+
+
+<script type="text/javascript" id="">(function(a,b,c,d){a[c]=a[c]||[];a[c].push({eventType:"init",value:d,dc:"us"});a=b.getElementsByTagName("script")[0];b=b.createElement("script");b.async=!0;b.src="https://tags.creativecdn.com/OiIKV8DdRsC6DWlZuu25.js";a.parentNode.insertBefore(b,a)})(window,document,"rtbhEvents","OiIKV8DdRsC6DWlZuu25");</script><iframe id="_hjSafeContext_76837467" title="_hjSafeContext" tabindex="-1" aria-hidden="true" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/a.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><img src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/Untitled.gif" width="1" height="1" scrolling="no" frameborder="0" style="display:none"><iframe width="1" height="1" scrolling="no" frameborder="0" style="display:none" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/ig-membership.html"></iframe><iframe width="1" height="1" scrolling="no" frameborder="0" style="display:none" src="Python%20para%20Data%20Science_%20trabalhando%20com%20fun%C3%A7%C3%B5es,%20estruturas%20de%20dados%20e%20exce%C3%A7%C3%B5es_%20Aula%204%20-%20Atividade%2012%20Refer%C3%AAncias%20_%20Alura%20-%20Cursos%20online%20de%20tecnologia_files/topics-membership.html"></iframe><button class="back-to-top" type="button" style="display: none;"><span class="back-to-top__text">Voltar ao topo</span></button></body></html>
